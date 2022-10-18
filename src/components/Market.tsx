@@ -66,11 +66,13 @@ const Market = () => {
           />
         ))}
       </div>
+      <h2 style={{ textAlign: "center", marginTop: "3rem" }}>Cart</h2>
       <Cart
         items={cart}
         handleRemoveFromCart={handleRemoveFromCart}
         handleCheckout={handleCheckout}
       />
+      <h2 style={{ textAlign: "center" }}>Sell an Item</h2>
       <ItemFactory handleAddItem={handleAddItem} />
     </div>
   );

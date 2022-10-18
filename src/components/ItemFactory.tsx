@@ -11,7 +11,6 @@ const ItemFactory = ({ handleAddItem }: IItemProps) => {
 
   return (
     <>
-      <h2 style={{ textAlign: "center" }}>Sell an Item</h2>
       <form
         onSubmit={(e) => {
           handleAddItem(e, { itemName, itemPrice, itemCalories });

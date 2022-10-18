@@ -9,9 +9,10 @@ interface ICartProps {
 }
 
 const Cart = ({ items, handleRemoveFromCart, handleCheckout }: ICartProps) => {
-  return (
+  return items.length === 0 ? (
+    <p style={{ textAlign: "center" }}>Cart is empty</p>
+  ) : (
     <div>
-      <h2 style={{ textAlign: "center", marginTop: "3rem" }}>Cart</h2>
       <div className="container row mx-auto">
         {items.map((item) => (
           <ItemCard
