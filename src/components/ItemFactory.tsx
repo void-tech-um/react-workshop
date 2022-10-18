@@ -1,5 +1,4 @@
 import React, { useState, FormEvent } from "react";
-import { Item } from "../types/item";
 
 interface IItemProps {
   handleAddItem: (e: FormEvent<HTMLFormElement>, item: any) => Promise<void>;
