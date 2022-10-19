@@ -14,13 +14,14 @@ const Market = () => {
 
   const api = new Api();
 
+  const fetchItems = async () => {
+    const items = await api.getItems();
+    setItems(items);
+  };
+
   useEffect(() => {
-    const fetchItems = async () => {
-      const items = await api.getItems();
-      setItems(items);
-    };
     fetchItems();
-  }, [items]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleAddToCart = (item: Item) => {
     setCart((prevCart) => [...prevCart, item]);
@@ -34,7 +35,8 @@ const Market = () => {
 
   const handleAddItem = async (e: FormEvent<HTMLFormElement>, item: Item) => {
     e.preventDefault();
-    await api.postItem(item);
+    const newItem = await api.postItem(item);
+    setItems((prevItems) => [...prevItems, newItem]);
   };
 
   const handleCheckout = () => {
