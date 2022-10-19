@@ -6,3 +6,10 @@ export interface Item {
   price: number;
   calories: number;
 }
+
+export interface IApi {
+  base_url: string;
+  getItems: () => Promise<Item[]>;
+  postItem: (item: Item) => Promise<Item>;
+  deleteItem: (id: number) => Promise<void>;
+}
