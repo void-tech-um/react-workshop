@@ -1,10 +1,11 @@
 import React, { FormEvent, useEffect, useState } from "react";
 
-import ItemCard from "./ItemCard";
 import Cart from "./Cart";
+import ItemCard from "./ItemCard";
 import ItemFactory from "./ItemFactory";
 
-import { Item } from "../types/item";
+import { Item } from "../global/types";
+
 import Api from "../helper/api";
 
 const Market = () => {
@@ -31,16 +32,8 @@ const Market = () => {
     );
   };
 
-  const handleAddItem = async (
-    e: FormEvent<HTMLFormElement>,
-    { itemName, itemPrice, itemCalories }: any
-  ) => {
+  const handleAddItem = async (e: FormEvent<HTMLFormElement>, item: Item) => {
     e.preventDefault();
-    const item: any = {
-      name: itemName,
-      price: itemPrice,
-      calories: itemCalories,
-    };
     await api.postItem(item);
   };
 

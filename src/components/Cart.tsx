@@ -1,6 +1,6 @@
 import * as React from "react";
 import ItemCard from "./ItemCard";
-import { Item } from "../types/item";
+import { Item } from "../global/types";
 
 interface ICartProps {
   items: Item[];

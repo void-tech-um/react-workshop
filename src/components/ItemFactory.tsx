@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { Item } from "../global/types";
 
 interface IItemProps {
   handleAddItem: (e: FormEvent<HTMLFormElement>, item: any) => Promise<void>;
@@ -13,7 +14,12 @@ const ItemFactory = ({ handleAddItem }: IItemProps) => {
     <>
       <form
         onSubmit={(e) => {
-          handleAddItem(e, { itemName, itemPrice, itemCalories });
+          const item: Item = {
+            name: itemName,
+            price: itemPrice,
+            calories: itemCalories,
+          };
+          handleAddItem(e, item);
         }}
       >
         <div className="form-group">
