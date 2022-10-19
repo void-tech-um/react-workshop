@@ -15,8 +15,12 @@ const Market = () => {
   const api = new Api();
 
   const fetchItems = async () => {
-    const items = await api.getItems();
-    setItems(items);
+    try {
+      const items = await api.getItems();
+      setItems(items);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -35,15 +39,23 @@ const Market = () => {
 
   const handleAddItem = async (e: FormEvent<HTMLFormElement>, item: Item) => {
     e.preventDefault();
-    const newItem = await api.postItem(item);
-    setItems((prevItems) => [...prevItems, newItem]);
+    try {
+      const newItem = await api.postItem(item);
+      setItems((prevItems) => [...prevItems, newItem]);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleCheckout = () => {
-    cart.forEach(async (item) => {
-      await api.deleteItem(item.id);
-    });
-    setItems((prevItems) => prevItems.filter((item) => !cart.includes(item)));
+    try {
+      cart.forEach(async (item) => {
+        await api.deleteItem(item.id);
+      });
+      setItems((prevItems) => prevItems.filter((item) => !cart.includes(item)));
+    } catch (error) {
+      console.log(error);
+    }
     setCart([]);
   };
 

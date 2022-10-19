@@ -12,7 +12,7 @@ export default class Api implements IApi {
       const response = await axios.get(`${this.base_url}/items/`);
       return response.data.items;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 
@@ -21,7 +21,7 @@ export default class Api implements IApi {
       const response = await axios.post(`${this.base_url}/items/`, item);
       return response.data;
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 
@@ -29,7 +29,7 @@ export default class Api implements IApi {
     try {
       await axios.delete(`${this.base_url}/items/${id}/`);
     } catch (error) {
-      console.log(error);
+      throw error;
     }
   };
 }
