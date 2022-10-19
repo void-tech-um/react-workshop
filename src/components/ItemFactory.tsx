@@ -1,11 +1,11 @@
 import React, { useState, FormEvent } from "react";
 import { Item } from "../global/types";
 
-interface IItemProps {
+interface IItemFactoryProps {
   handleAddItem: (e: FormEvent<HTMLFormElement>, item: any) => Promise<void>;
 }
 
-const ItemFactory = ({ handleAddItem }: IItemProps) => {
+const ItemFactory = ({ handleAddItem }: IItemFactoryProps) => {
   const [itemName, setItemName] = useState("");
   const [itemPrice, setItemPrice] = useState(0.0);
   const [itemCalories, setItemCalories] = useState(0);
