@@ -40,7 +40,7 @@ This script will populate the database with some hardcoded data. You can run it 
 ### Install Dependencies
 
 ```console
-./install DIR
+$ ./install DIR
 ```
 
 This script will install the dependencies for the project in the specified directory.
