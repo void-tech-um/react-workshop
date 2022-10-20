@@ -29,11 +29,19 @@ You will also see any lint errors in the console.
 
 ## Available Scripts
 
-### `node generator/populateApi.js`
+### Populate the Database
 
-This script will populate the API with some hardcoded data. You can run it as many times as you want, but it will have duplicate data.
+```console
+$ node generator/populateApi.js
+```
 
-### `./install DIR`
+This script will populate the database with some hardcoded data. You can run it as many times as you want, but it will have duplicate data.
+
+### Install Dependencies
+
+```console
+./install DIR
+```
 
 This script will install the dependencies for the project in the specified directory.
 
