@@ -1,7 +1,7 @@
 # This config file renders the "primer-spec" theme from:
 # https://github.com/eecs485staff/primer-spec
 # This theme is built on the default GitHub Markdown theme "Primer", and
-# optionally renders a sidebar to easily navigate project specs.
+# optionally renders a sidebar to easily navigate the document.
 
 title: "react-workshop"
 repository: void-tech-um/react-workshop
