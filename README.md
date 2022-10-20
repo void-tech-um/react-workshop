@@ -2,14 +2,22 @@
 
 This is the project for the React Workshop. Feel free to look over it to remind yourself of the concepts we covered.
 
-## Installation
+You can find the detailed setup in the [docs](./docs/README.md) folder. Or you can go to the [live site](https://voidtechmichigan.com/react-workshop/).
 
-1. Clone the repository
-2. Run `npm install` in the root directory
+## Quick Start
 
-## Available Scripts
+Install the dependencies:
 
-In the project directory, you can run:
+```console
+$ ./install solution
+```
+
+Run the development server:
+
+```console
+$ cd solution/
+$ npm start
+```
 
 ### `npm start`
 
@@ -19,9 +27,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `node src/helper/populateApi.mjs`
+## Available Scripts
+
+### `node generator/populateApi.js`
 
 This script will populate the API with some hardcoded data. You can run it as many times as you want, but it will have duplicate data.
+
+### `./install DIR`
+
+This script will install the dependencies for the project in the specified directory.
 
 ## Learn More
 
