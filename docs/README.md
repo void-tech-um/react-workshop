@@ -33,6 +33,7 @@ $ rm -rf starter_files starter_files.tar.gz
 Your project directory should now look like this:
 
 ```console
+$ tree
 react-workshop/
 ├── package-lock.json
 ├── package.json
