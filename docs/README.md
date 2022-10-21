@@ -92,7 +92,7 @@ Once you have Node.js installed, you can install the dependencies for the projec
 
 ```console
 $ pwd
-$ /home/santiagomed/umich/void/workshops/react-workshop
+/home/santiagomed/umich/void/workshops/react-workshop
 $ npm ci
 ```
 
