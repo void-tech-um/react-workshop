@@ -82,7 +82,9 @@ $ nvm install --lts
 Once you have Node.js installed, you can install the dependencies for the project.
 
 ```console
-$ npm install
+$ pwd
+$ /home/santiagomed/umich/void/workshops/react-workshop
+$ npm ci
 ```
 
 ## Running the Project
