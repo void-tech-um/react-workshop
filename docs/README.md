@@ -64,7 +64,7 @@ react-workshop/
 
 Once you have cloned the repository, you will need to install Node.js and the dependencies for the project.
 
-If you already have Node.js installed, use `npm` to install `nvm`, the Node.js version manager. You can check if you have Node.js installed by running `node --version`.
+If you already have Node.js installed, use `wget` to install `nvm`, the Node.js version manager. You can check if you have Node.js installed by running `node --version`.
 
 ```console
 $ node --version
