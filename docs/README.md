@@ -4,6 +4,8 @@ layout: spec
 
 # React Workshop
 
+{: .primer-spec-toc-ignore }
+
 Welcome to the React Workshop for the VOID Tech Org at the University of Michigan. The workshop is intended to be a 2 hour workshop that introduces the basics of React and how to use it to build a simple web application. The workshop is intended to be a hands-on workshop, so the members will be following along to build the application themselves.
 
 ## Getting Started
@@ -17,7 +19,7 @@ Download and unpack the starter files:
 ```console
 $ pwd
 /home/santiagomed/umich/void/workshops/react-workshop
-$ wget https://voidtechmichigan.com/react-workshop/starter_files.tar.gz
+$ wget https://voidtechmichigan.org/react-workshop/starter_files.tar.gz
 $ tar -xvzf starter_files.tar.gz
 ```
 
