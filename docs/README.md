@@ -18,12 +18,14 @@ Download and unpack the starter files:
 
 ```console
 $ pwd
-/home/santiagomed/umich/void/workshops/react-workshop
+/home/santiagomed/umich/void/workshops
+$ mkdir react-workshop
+$ cd react-workshop
 $ wget https://voidtechmichigan.org/react-workshop/starter_files.tar.gz
 $ tar -xvzf starter_files.tar.gz
 ```
 
-Move the starter files to your project directory and remove the original starter_files/ directory and tarball.
+Move the starter files to your project directory and remove the original `starter_files/` directory and tarball.
 
 ```console
 $ pwd
@@ -62,10 +64,12 @@ react-workshop/
 
 Once you have cloned the repository, you will need to install Node.js and the dependencies for the project.
 
-If you already have Node.js installed, use `npm` to install `nvm`, the Node.js version manager.
+If you already have Node.js installed, use `npm` to install `nvm`, the Node.js version manager. You can check if you have Node.js installed by running `node --version`.
 
 ```console
-$ npm install -g nvm
+$ node --version
+v16.18.0
+$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 ```
 
 Then, use `nvm` to install the latest stable version of Node.js.
@@ -74,11 +78,14 @@ Then, use `nvm` to install the latest stable version of Node.js.
 $ nvm install --lts
 ```
 
-If you do not have Node.js installed, you can install it from the [Node.js website](https://nodejs.org/en/). Now you can install nvm and the latest stable version of Node.js.
+If you do not have Node.js installed, you can install it from the [Node.js website](https://nodejs.org/en/). Make sure you install the latest stable version (LTS). As of October 20, 2022, the LTS is v16.18.0. Make sure your installation also includes `npm`, the Node.js package manager.
+
+If you want to install `nvm` to manage your Node.js versions, you can do so through the command below. This is not necessary for the workshop, but it is recommended.
 
 ```console
-$ npm install -g nvm
-$ nvm install --lts
+$ node --version
+v16.18.0
+$ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 ```
 
 Once you have Node.js installed, you can install the dependencies for the project.
