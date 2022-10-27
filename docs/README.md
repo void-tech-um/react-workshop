@@ -132,10 +132,7 @@ const obj = {width: 10, height: 15};
 const area = obj.width * obj.heigth; // TypeScript will throw an error!
 ```
 
-### What you need to know
-Following are some things to keep in mind when writing TypeScript code:
-
-#### Assignment and Comparison
+### Assignment and Comparison
 
 Never use `var` to declare a variable. Always use `let` or `const`. Always use `const` to declare a variable if you don't plan on changing it.
     
@@ -173,7 +170,7 @@ if (x === null) {
     // this will evaluate to true
 }
 ```
-#### Objects and Functions
+### Objects and Functions
 Objects and functions are the building blocks of TypeScript. You will be using them a lot, so it is important to understand how they work. Objects are collections of key-value pairs, and functions are blocks of code that can be called from other parts of your code.
 
 ```ts
@@ -207,7 +204,7 @@ eboard.forEach(function(member) {
 });
 eboard.forEach(member => console.log(member));
 ```
-#### Map and forEach
+### Map and forEach
 Don't use `for-in` loops. They are slow and can lead to unexpected behavior. Use `forEach` instead.
 ```ts
 const eboard = ['Kavya', 'Anabelle', 'Noah', 'Santiago', 'Celina', 'Kelly'];
@@ -221,7 +218,7 @@ const funEboard = eboard.map(member => member + ' is fun!');
 console.log(funEboard);
 // This prints out an array of strings that say each member of the eboard is fun
 ```
-#### Types and Interfaces
+### Types and Interfaces
 TypeScript has a lot of built-in types, such as `string`, `number`, `boolean`, `null`, `undefined`, `any`, `void`, `never`, `object`, and `unknown`. You can also define your own types using `type` and `interface`. `type` is a way to define a type alias, and `interface` is a way to define a new type. The difference between the two is that `type` can be used to define a union type, and `interface` cannot. A union type is a type that can be one of multiple types.
 ```ts
 // type
@@ -233,7 +230,7 @@ interface Person {
     age: number;
 }
 ```
-#### Classes
+### Classes
 Classes are a way to define a new type that can be instantiated. They are useful when you want to create multiple objects that have the same properties and methods.
 ```ts
 class Person {
@@ -264,7 +261,6 @@ console.log('World');
 console.log('Hello').then(() => console.log('World'));
 // This will print "Hello" first, and then "World"
 ```
-#### Async/Await
 Async/await is a way to write asynchronous code that looks synchronous. It is syntactic sugar for promises. Async functions always return a promise, and await can only be used inside of async functions. Await will pause the execution of the async function until the promise is resolved. A Promise is an object that represents the eventual completion or failure of an asynchronous operation. It has three states: pending, fulfilled, and rejected. A promise is pending when it is waiting for the asynchronous operation to complete. A promise is fulfilled when the asynchronous operation completes successfully. A promise is rejected when the asynchronous operation fails.
 ```ts
 // promise
@@ -289,14 +285,14 @@ asyncFunc();
 // This will also print "Hello World!" after 1 second, they are equivalent
 ```
 
-### React and React Native
+## React and React Native
 Note: The starter files we provided for this workshop already have some code written for you. It is detailed with comments to help you understand what is going on. Take some time to look over all files and think about how it all works at a high level.
 
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components".
 
 The application we will be working on today has the following component tree structure:
 ![Component Tree](./images/component-tree.excalidraw.png)
-#### JSX
+### JSX
 JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript. JSX produces React "elements". React elements are plain JavaScript objects that describe what you want to see on the screen.
 
 ```jsx
@@ -331,7 +327,7 @@ export default App;
 ```
 This is the entry point of our app. We are importing our `Market` component, which is the main component of our app. We are then returning it in our `App` component. This is the component that is rendered when the app is launched. In case you are wondering, the `<>` is a shorthand for `<React.Fragment>`. It is used to wrap multiple elements without adding an extra node to the DOM. You can read more about it [here](https://reactjs.org/docs/fragments.html#short-syntax).
 
-#### Components and Props
+### Components and Props
 We render React elements through components. Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. Components can be defined as classes or functions. We will be using function components for our app.
 
 Components accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
@@ -400,7 +396,7 @@ The `className` and `style` attributes are used to add CSS classes and styles to
 
 The `inCart` prop is used to determine if the item is already in the cart. If it is, we will render a button to remove it from the cart. If it isn't, we will render a button to add it to the cart. We are also using the `disabled` prop to disable the button if the item is already in the cart. We will learn more about conditional rendering later on.
 
-#### State and Hooks
+### State and Hooks
 State is similar to props, but it is private and fully controlled by the component. Hooks are functions that let you "hook into" React state and lifecycle features from function components. We will be using the `useState` hook to manage our state.
 
 An example of a state variable is the `count` variable in the following component:
@@ -520,7 +516,7 @@ See how we are using `useState` to set the state of our app. An `items` state to
 
 Taking a look at the `return` expression, ignore everything except the `items.map` function. We are iterating over the `items` state and rendering an `ItemCard` component for each item. In each component, we are passing the `item` prop, the `inCart` prop, the `handleCart` prop, and the `disabled` prop. We will go over how these props work later on.
 
-#### Handling Events
+### Handling Events
 Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if desired. React events are named using camelCase, rather than lowercase. With JSX you pass a function as the event handler, rather than a string. The functions are passed as a callback function. For example, the `onClick` event is passed as `onClick={handleClick}`. Notice the lack of parentheses after `handleClick`. This is because we don't want the function to be called when the component is rendered. We want the function to be called when the event is triggered.
 ```tsx
 <button onClick={handleClick}>Click me</button>
@@ -542,7 +538,7 @@ function Form() {
 }
 ```
 
-#### Lifting the State Up
+### Lifting the State Up
 The state should be kept in your parent components. Most of your components, especially the smaller ones, won’t have a state. So how do we change the state of the parent from the child component? Can we keep track of state in our child component and set it equal to the passed props from the parent?
 
 The answer is no. We can’t do that. The state should be kept in the parent component to avoid data discrepancies. The child component should only be responsible for rendering the UI. So how do we change the state of the parent from the child component? We use a function passed as a prop from the parent component. This function is called a callback function. We can call this function from the child component and pass the new state as an argument. The parent component will then update the state using the new state passed as an argument.
@@ -658,7 +654,7 @@ export default ItemFactory;
 ```
 In this component, we are using the `useState` hook to keep track of the state of the form. We are also using the `onChange` event on each `<input>` element to update the state of the form by passing a callback function to the `onChange` event. Additionally, we use the `onSubmit` event to call the `handleAddItem` function passed as a prop from the parent component. We are also passing the new item as an argument to the `handleAddItem` function and using the `preventDefault` function to prevent the default behavior of the `onSubmit` event.
 
-#### Conditional Rendering
+### Conditional Rendering
 Sometimes we want to render a certain JSX element based on a condition. For example, we want to render a button if the user is logged in and a login form if the user is not logged in. We can use the ternary operator to render JSX elements based on a condition
 ```tsx
 {loggedIn ? (<p>Hi, {user}</p>) : (<p>Hi, stanger</p>)}
@@ -712,7 +708,7 @@ export default Cart;
 ```
 We are using the ternary operator to render the JSX elements based on the length of the `items` array. If the length of the array is 0, we render a message saying that the cart is empty. Otherwise, we render the items in the cart.
 
-#### API Calls in React
+### API Calls in React
 APIs stands for Application Programming Interface. It is a set of rules that allow two applications to communicate with each other. For example, if you want to get the weather forecast for a city, you can make an API call to a weather API. The API will return the weather forecast for the city you requested. They are done over the internet using HTTP requests. HTTP requests resolve to a `Response` object with important data. We are going to be making calls to REST APIs. REST stands for Representational State Transfer. It is a set of rules that allow two applications to communicate with each other. REST APIs are stateless, meaning that the server does not keep track of the state of the client. The client has to send all the information the server needs to process the request. The response of these APIs is in JSON format.
 
 Types of HTTP Requests:
