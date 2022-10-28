@@ -326,8 +326,8 @@ asyncFunc();
 // This will also print "Hello World!" after 1 second
 ```
 
-## React and React Native
-Note: The starter files we provided for this workshop already have some code written for you. It is detailed with comments to help you understand what is going on. Take some time to look over all files and think about how it all works at a high level.
+## React
+Note: The starter files I provided for this workshop already have some code written for you. It is detailed with comments to help you understand what is going on. Take some time to look over all files and think about how it all works at a higher level.
 
 React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called "components". Components are the building blocks of a React application's UI. You can think of them as nodes in a tree structure. Where any parent component calls their child component(s).
 
