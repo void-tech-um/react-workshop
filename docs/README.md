@@ -817,4 +817,4 @@ To learn more about TypeScript check out the [TypeScript documentation](https://
 To learn more about React, check out the [React documentation](https://reactjs.org/).
 
 ## Acknowledgements
-This tutorial was built by Santiago Medina [santiagm@umich.edu](santiagm@umich.edu) for VOID Tech. It was heavily based off of the React documentation. Find the links to the documentation in the "Learn More" section above.
+This tutorial was built by [Santiago Medina](https://github.com/santiagomed) for VOID Tech. It was heavily based off of the React documentation. Find the links to the documentation in the "Learn More" section above.
