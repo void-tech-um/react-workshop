@@ -8,15 +8,20 @@ import { Item } from "../global/types";
 
 import Api from "../helper/api";
 
-const Market = () => {
+interface IMarketProps {
+  logout: () => void;
+}
+
+const Market = ({ logout }: IMarketProps) => {
   const [items, setItems] = useState<Item[]>([]);
   const [cart, setCart] = useState<Item[]>([]);
 
   const api = new Api();
+  const token = localStorage.getItem("token");
 
   const fetchItems = async () => {
     try {
-      const items = await api.getItems();
+      const items = await api.getItems(token as string);
       setItems(items);
     } catch (error) {
       console.log(error);
@@ -40,7 +45,7 @@ const Market = () => {
   const handleAddItem = async (e: FormEvent<HTMLFormElement>, item: Item) => {
     e.preventDefault();
     try {
-      const newItem = await api.postItem(item);
+      const newItem = await api.postItem(item, token as string);
       setItems((prevItems) => [...prevItems, newItem]);
     } catch (error) {
       console.log(error);
@@ -50,13 +55,13 @@ const Market = () => {
   const handleCheckout = () => {
     try {
       cart.forEach(async (item) => {
-        await api.deleteItem(item.id);
+        await api.deleteItem(item.id, token as string);
       });
       setItems((prevItems) => prevItems.filter((item) => !cart.includes(item)));
+      setCart([]);
     } catch (error) {
       console.log(error);
     }
-    setCart([]);
   };
 
   return (
@@ -81,6 +86,9 @@ const Market = () => {
       />
       <h2 style={{ textAlign: "center" }}>Sell an Item</h2>
       <ItemFactory handleAddItem={handleAddItem} />
+      <button className="btn btn-danger" onClick={() => logout()}>
+        Logout{" "}
+      </button>
     </div>
   );
 };

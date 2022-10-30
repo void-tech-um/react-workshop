@@ -9,7 +9,7 @@ export interface Item {
 
 export interface IApi {
   base_url: string;
-  getItems: () => Promise<Item[]>;
-  postItem: (item: Item) => Promise<Item>;
-  deleteItem: (id: number) => Promise<void>;
+  getItems: (token: string) => Promise<Item[]>;
+  postItem: (item: Item, token: string) => Promise<Item>;
+  deleteItem: (id: number, token: string) => Promise<void>;
 }
