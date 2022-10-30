@@ -30,7 +30,11 @@ export default class Api implements IApi {
 
   postItem = async (item: Item, token: string) => {
     try {
-      const response = await axios.post(`${this.base_url}/items/`, item);
+      const response = await axios.post(`${this.base_url}/items/`, item, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       return response.data;
     } catch (error) {
       throw error;
@@ -39,7 +43,11 @@ export default class Api implements IApi {
 
   deleteItem = async (id: any, token: string) => {
     try {
-      await axios.delete(`${this.base_url}/items/${id}/`);
+      await axios.delete(`${this.base_url}/items/${id}/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
     } catch (error) {
       throw error;
     }
