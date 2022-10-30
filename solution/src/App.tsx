@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Market from "./components/Market";
+import React from "react";
 import Login from "./components/Login";
+import Market from "./components/Market";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
