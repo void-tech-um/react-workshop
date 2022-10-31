@@ -35,7 +35,7 @@ export default class Api implements IApi {
           Authorization: `Bearer ${token}`,
         },
       });
-      return response.data;
+      return response.data.createdItem;
     } catch (error) {
       throw error;
     }
