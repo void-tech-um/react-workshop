@@ -1,9 +1,9 @@
 import React from "react";
 import Login from "./components/Login";
 import Market from "./components/Market";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import { AuthContext } from "./global/context";
-import AuthRoute from "./components/routes/AuthRoute";
+import { AuthRoute, LoginRoute } from "./components/routes/CustomRoutes";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
     <AuthContext.Provider value={{ login, logout }}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/login" component={Login} />
+          <LoginRoute exact path="/login" component={Login} />
           <AuthRoute exact path="/" component={Market} />
         </Switch>
       </BrowserRouter>
