@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import Market from "./components/Market";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthContext } from "./global/context";
-import AuthRoute from "./helper/AuthRoute";
+import AuthRoute from "./components/routes/AuthRoute";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
