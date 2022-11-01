@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../global/context";
 import Api from "../helper/api";
 
-interface LoginProps {
-  setToken: (token: string) => void;
-}
-
-const Login = ({ setToken }: LoginProps) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const auth = useContext(AuthContext);
 
   const api = new Api();
 
@@ -16,7 +14,7 @@ const Login = ({ setToken }: LoginProps) => {
     try {
       const res = await api.login(username, password);
       console.log(res);
-      setToken(res.token);
+      auth.login(res.token);
     } catch (err) {
       alert(err);
     }

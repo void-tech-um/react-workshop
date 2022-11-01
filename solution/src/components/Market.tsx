@@ -1,23 +1,20 @@
-import React, { FormEvent, useEffect, useState } from "react";
-
+import React, { FormEvent, useEffect, useState, useContext } from "react";
 import Cart from "./Cart";
 import ItemCard from "./ItemCard";
 import ItemFactory from "./ItemFactory";
+import { AuthContext } from "../global/context";
 
 import { Item } from "../global/types";
 
 import Api from "../helper/api";
 
-interface IMarketProps {
-  logout: () => void;
-}
-
-const Market = ({ logout }: IMarketProps) => {
+const Market = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [cart, setCart] = useState<Item[]>([]);
+  const auth = useContext(AuthContext);
 
-  const api = new Api();
   const token = localStorage.getItem("token");
+  const api = new Api();
 
   const fetchItems = async () => {
     try {
@@ -86,7 +83,7 @@ const Market = ({ logout }: IMarketProps) => {
       />
       <h2 style={{ textAlign: "center" }}>Sell an Item</h2>
       <ItemFactory handleAddItem={handleAddItem} />
-      <button className="btn btn-danger" onClick={() => logout()}>
+      <button className="btn btn-danger" onClick={() => auth.logout()}>
         Logout{" "}
       </button>
     </div>
