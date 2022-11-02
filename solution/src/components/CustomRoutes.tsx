@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { checkAuth } from "../../helper/auth";
+import { checkAuth } from "../helper/auth";
 
 export const AuthRoute = ({ component: Component, ...rest }: any) => {
   return (
